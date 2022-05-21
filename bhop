@@ -23,8 +23,9 @@ _G.bhoptoggle = false --// toggle
     --// Main bhop code
 while wait() do 
         while  game.Players.LocalPlayer.Character.Humanoid.Jump == true do 
-        if _G.bhoptoggle == true then 
+        
         wait()
+        if _G.bhoptoggle == true then 
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.bhopstrength
         wait(0.1)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16 
