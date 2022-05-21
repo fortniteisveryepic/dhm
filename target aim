@@ -118,3 +118,10 @@ mt.__namecall = newcclosure(function(...)
     end
     return old(...)
 end)
+
+game:GetService("RunService").RenderStepped:Connect(function() 
+        Settings.Settings.Thickness = _G.thickness, --3.5
+        Settings.Settings.Transparency = _G.thuskytransparency, --1 
+        Settings.Settings.Color = _G.thuskycolor, --Color3.fromRGB(0, 0, 0)
+        Settings.Settings.FOV = _G.fovtoggle --true
+end) 
