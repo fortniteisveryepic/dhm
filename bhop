@@ -1,7 +1,7 @@
 local UIS = game:service('UserInputService') --// grabs user input service
 if not getgenv().MTAPIMutex then loadstring(game:HttpGet("https://raw.githubusercontent.com/KikoTheDon/MT-Api-v2/main/__source/mt-api%20v2.lua", true))() end --// mt api thx 3dsboy
 game.Players.LocalPlayer.Character.Humanoid:AddPropertyEmulator("WalkSpeed") --spoofs walkspeed
-_G.nocooldown = true --// toggle for no jump cooldown
+_G.nocooldown = false --// toggle for no jump cooldown
 _G.bhopstrength = 35 --// How far you jump when you bhop
 _G.bhoptoggle = false --// toggle
 
