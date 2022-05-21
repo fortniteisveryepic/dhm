@@ -1,0 +1,34 @@
+local UIS = game:service('UserInputService') --// grabs user input service
+if not getgenv().MTAPIMutex then loadstring(game:HttpGet("https://raw.githubusercontent.com/KikoTheDon/MT-Api-v2/main/__source/mt-api%20v2.lua", true))() end --// mt api thx 3dsboy
+game.Players.LocalPlayer.Character.Humanoid:AddPropertyEmulator("WalkSpeed") --spoofs walkspeed
+_G.nocooldown = true --// toggle for no jump cooldown
+_G.bhopstrength = 35 --// How far you jump when you bhop
+_G.bhoptoggle = false --// toggle
+
+    --//No jump cooldown hooking using hookmetamethod 
+    local IsA = game.IsA;
+    local newindex = nil
+     
+    -- main hook
+    newindex = hookmetamethod(game, "__newindex", function(self, Index, Value)
+       if not checkcaller() and IsA(self, "Humanoid") and Index == "JumpPower" and _G.nocooldown == true then
+           return
+       end
+       
+       return newindex(self, Index, Value);
+    end)
+    --// 
+    
+    
+    --// Main bhop code
+while wait() do 
+        while  game.Players.LocalPlayer.Character.Humanoid.Jump == true do 
+        if _G.bhoptoggle == true then 
+        wait()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.bhopstrength
+        wait(0.1)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16 
+            end 
+end 
+end 
+--// end of bhop code 
