@@ -9,7 +9,7 @@ _G.FOV =   600 --// fov
 
 _G.AimKey =  "q" --// Aim key
 
-_G.toggle = false
+_G.silentaimtoggle = false
 local SilentAim = true --// Toggle
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Players = game:GetService("Players")
@@ -93,7 +93,7 @@ oldIndex = hookmetamethod(game, "__index", function(self, Index)
             end
         end
         
-        if Targete ~= nil and Targete[Options.Torso] and Targete:FindFirstChild("Humanoid").Health > 0 and _G.toggle == true then
+        if Targete ~= nil and Targete[Options.Torso] and Targete:FindFirstChild("Humanoid").Health > 0 and _G.silentaimtoggle == true then
             if SilentAim then
                 local ShootThis = Targete[Options.Head] -- or Options.Head
                 local Predicted_Position = ShootThis.CFrame + (ShootThis.Velocity * _G.Prediction + Vector3.new(0,_G.silentaimbdypart,0)) --  (-1) = Less blatant
