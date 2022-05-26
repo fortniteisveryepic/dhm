@@ -23,7 +23,7 @@ _G.Distance = 190000343
     
     local FOV_CIRCLE = Drawing.new("Circle")
     _G.Circle = FOV_CIRCLE
-    FOV_CIRCLE.Visible = true
+    FOV_CIRCLE.Visible = false
     FOV_CIRCLE.Filled = false
     FOV_CIRCLE.Thickness = 1
     FOV_CIRCLE.Transparency = 1
@@ -107,7 +107,7 @@ Duration = 3
             if Targete ~= nil and Targete[Options.Torso] and Targete:FindFirstChild("Humanoid").Health > 0 then
                 if SilentAim and _G.silentaimtoggle == true then 
                     local ShootThis = Targete[Options.Torso] -- or Options.Head
-                    local Predicted_Position = ShootThis.CFrame + (ShootThis.Velocity * _G.Prediction + Vector3.new(0,_G.silentaimbdypart,0)) --  (-1) = Less blatant
+                    local Predicted_Position = ShootThis.CFrame + (ShootThis.Velocity * _G.Prediction + Vector3.new(0,0.5,0)) --  (-1) = Less blatant
                     return ((Index == "Hit" and Predicted_Position))
                 end
             end
