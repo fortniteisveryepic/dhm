@@ -7,13 +7,13 @@ _G.Distance = 190000343
     _G.FOV =  600
     
     _G.AimKey =    "p"  
-    _G.silentaimtoggle = false 
+    
     
     --[[
         Do not edit anything under this.
     ]]
     
-    local SilentAim = false 
+    local SilentAim = true 
     local LocalPlayer = game:GetService("Players").LocalPlayer
     local Players = game:GetService("Players")
     local Mouse = LocalPlayer:GetMouse()
@@ -105,7 +105,7 @@ Duration = 3
             end
             
             if Targete ~= nil and Targete[Options.Torso] and Targete:FindFirstChild("Humanoid").Health > 0 then
-                if SilentAim and _G.silentaimtoggle == true then 
+                if SilentAim == true then 
                     local ShootThis = Targete[Options.Torso] -- or Options.Head
                     local Predicted_Position = ShootThis.CFrame + (ShootThis.Velocity * _G.Prediction + Vector3.new(0,0.5,0)) --  (-1) = Less blatant
                     return ((Index == "Hit" and Predicted_Position))
